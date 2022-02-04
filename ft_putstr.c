@@ -6,7 +6,7 @@
 /*   By: tchalifo <tchalifo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/12 16:28:38 by tchalifo          #+#    #+#             */
-/*   Updated: 2021/11/15 10:36:51 by tchalifo         ###   ########.fr       */
+/*   Updated: 2022/02/04 13:57:02 by tchalifo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ size_t	ft_putstr(char *str)
 	size_t	count;
 
 	i = 0;
+	count = 0;
 	while (str[i])
 	{
 		write(1, &str[i], 1);
