@@ -1,8 +1,7 @@
-###_*_*_*_*_*_*_*_*_*_*_*_*_Makefile_libft_*_*_*_*_*_*_*_*_*_*_*_*_###
+###_*_*_*_*_*_*_*_*_*_*_*_*_Makefile_tchalifo_*_*_*_*_*_*_*_*_*_*_*_*_###
 
-
-###-------------------------# VARIABLES ##-------------------------###
-NAME = libft.a
+# ->-Variables-->
+NAME 			= <name_of_the_library>
 
 SRCS_FILES 		=	ft_atoi.c\
 			ft_bzero.c \
@@ -56,53 +55,51 @@ B_SRCS_FILES	= 	ft_lstnew.c \
 			ft_lstmap.c \
 
 ### Nommer les fichiers objets ###
-OBJS_FILES 	= $(SRCS_FILES:.c=.o) $(B_SRCS_FILES:.c=.o) # Utilise les noms de fichier de la variable SRCS_FILES et modifie le suffix .c en .o
+OBJS_FILES 		= $(SRCS_FILES:.c=.o) $(B_SRCS_FILES:.c=.o) # Utilise les noms de fichier de la variable SRCS_FILES et modifie le suffix .c en .o
 
 ### Repertoires ###
-SRCS_DIR 	= srcs/
-B_SRCS_DIR 	= bonus/srcs/
-OBJS_DIR	= objs/
-INCLUDE_DIR = include/
+SRCS_DIR 		= srcs/
+B_SRCS_DIR 		= bonus/srcs/
+OBJS_DIR		= objs/
+INCLUDE_DIR 	= include/
 
-SRCS 		= $(addprefix $(SRCS_DIR), $(SRCS_FILES))
-B_SRCS 		= $(addprefix $(B_SRCS_DIR), $(B_SRCS_FILES))
-OBJS 		= $(addprefix $(OBJS_DIR), $(OBJS_FILES))
-VPATH 		= $(SRCS_DIR) $(B_SRCS_DIR)
+SRCS 			= $(addprefix $(SRCS_DIR), $(SRCS_FILES))
+B_SRCS 			= $(addprefix $(B_SRCS_DIR), $(B_SRCS_FILES))
+OBJS 			= $(addprefix $(OBJS_DIR), $(OBJS_FILES))
+VPATH 			= $(SRCS_DIR) $(B_SRCS_DIR)
 
 ### Compilations et archivage ###
-CC 			= gcc
-CFLAGS 		= -Wall -Werror -Wextra
-AR 			= ar -cr
+CC 				= gcc
+CFLAGS 			= -Wall -Werror -Wextra
+AR 				= ar -cr
 
 ### Autres Fonctions ###
 
-RM 			= rm -rf
-NORMINETTE 	= norminette
+RM 				= rm -rf
+NORMINETTE 		= norminette
 
 ### Colour var ###
 
-END			= \033[0m
-BOLD		= \033[1m
-ITALIC		= \033[3m
-URL			= \033[4m
-BLINK		= \033[5m
-BLINK2		= \033[6m
-SELECTED	= \033[7m
+END				= \033[0m
+BOLD			= \033[1m
+ITALIC			= \033[3m
+URL				= \033[4m
+BLINK			= \033[5m
+BLINK2			= \033[6m
+SELECTED		= \033[7m
 
-BLACK		= \033[30m
-RED			= \033[31m
-GREEN		= \033[32m
-YELLOW		= \033[33m
-BLUE		= \033[34m
-VIOLET		= \033[35m
-BEIGE		= \033[36m
-WHITE		= \033[37m
+BLACK			= \033[30m
+RED				= \033[31m
+GREEN			= \033[32m
+YELLOW			= \033[33m
+BLUE			= \033[34m
+VIOLET			= \033[35m
+BEIGE			= \033[36m
+WHITE			= \033[37m
 
-
-###--------------------------## REGLES ##--------------------------###
-
+# ->-Rules-->
 all: obj $(NAME)
-	@echo "$(RED)Red Color$(END)"
+	@echo "$(GREEN)Your library have been created$(END)"
 
 $(OBJS_DIR)%.o:%.c
 	$(CC) $(CFLAGS) -I$(INCLUDE_DIR) -o $@ -c $< 
@@ -114,14 +111,15 @@ obj:
 	@mkdir -p $(OBJS_DIR)
 
 norm:
-	$(NORMINETTE) $(SRCS) $(B_SRCS) include/*
+	$(NORMINETTE) $(SRCS) $(B_SRCS) ${INCLUDE_DIR}*
 
 clean:
 	$(RM) $(OBJS)
-
+	@echo "\n${GREEN}${BOLD}Objects files have been ${RED}deleted${GREEN} correcly\n${END}"
 fclean:	clean
 	$(RM) $(NAME) $(OBJS_DIR)
-
+	@echo "\n${GREEN}${BOLD}Your library have been ${RED}deleted${GREEN} too\n${END}"
 re:	fclean all
+	@echo "$(GREEN)Your library have been updated$(END)"
 
 phony: clean fclean all re bonus norm
