@@ -18,6 +18,7 @@ size_t	ft_putstr(char *str)
 	size_t	count;
 
 	i = 0;
+	count = 0;
 	while (str[i])
 	{
 		write(1, &str[i], 1);
