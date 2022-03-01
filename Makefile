@@ -85,12 +85,12 @@ WHITE			= \033[37m
 # ->-Rules-->
 all: ${NAME}
 
-${NAME}: ${OBJS}
-	@${ARCHIVE} ${NAME} ${OBJS}
+${LIB_NAME}: ${OBJS}
+	@${ARCHIVE} ${LIB_NAME} ${OBJS}
 	@echo "${OBJS} ${GREEN}${BOLD}\n\nObjects files are added to the archive libft.a correctly\n${END}"
 
-bonus: ${NAME} ${BONUS_OBJS}
-	@${ARCHIVE} ${NAME} ${BONUS_OBJS}
+bonus: ${LIB_NAME} ${BONUS_OBJS}
+	@${ARCHIVE} ${LIB_NAME} ${BONUS_OBJS}
 	@echo "${BONUS_OBJS} ${GREEN} ${BOLD}\n\nObjects files and bonus objects files are added to the archive libft.a correctly\n${END}"
 
 .c.o:
@@ -102,7 +102,7 @@ clean:
 	@echo "\n${GREEN}${BOLD}Objects files are ${RED}deleted${GREEN} correcly\n${END}"
 
 fclean: clean
-	@${REMOVE} ${NAME}
+	@${REMOVE} ${LIB_NAME}
 	@echo "\n${GREEN}${BOLD}Library are ${RED}deleted${GREEN} too\n${END}"
 
 re: fclean all
