@@ -62,7 +62,7 @@ FLAGS 			= -Wall -Werror -Wextra
 ARCHIVE 		= ar -crs
 
 ### Others functions ###
-REMOVE 			= rm -rf
+RM 			= rm -rf
 
 ### Colour variables ###
 END				= \033[0m
@@ -83,29 +83,33 @@ BEIGE			= \033[36m
 WHITE			= \033[37m
 
 # ->-Rules-->
-all: ${NAME}
+all: ${LIB_NAME}
 
 ${LIB_NAME}: ${OBJS}
+	@echo "\n${GREEN}${BOLD}Compiling and adding objects files to the libft.a archive.${END}"
 	@${ARCHIVE} ${LIB_NAME} ${OBJS}
-	@echo "${OBJS} ${GREEN}${BOLD}\n\nObjects files are added to the archive libft.a correctly\n${END}"
+	@sleep 0.5
 
 bonus: ${LIB_NAME} ${BONUS_OBJS}
+	@echo "\n${GREEN}${BOLD}Compiling and adding objects files and bonus objects files to the libft.a archive.${END}"
 	@${ARCHIVE} ${LIB_NAME} ${BONUS_OBJS}
-	@echo "${BONUS_OBJS} ${GREEN} ${BOLD}\n\nObjects files and bonus objects files are added to the archive libft.a correctly\n${END}"
+	@sleep 0.5
 
 .c.o:
-	$(CC) ${FLAGS} -o $@ -c $<
-	@echo "${GREEN}Compilation OK!${END}"
+	@$(CC) ${FLAGS} -o $@ -c $<
 
 clean:
-	$(REMOVE) ${OBJS} ${BONUS_OBJS}
-	@echo "\n${GREEN}${BOLD}Objects files are ${RED}deleted${GREEN} correcly\n${END}"
+	@$(RM) ${OBJS} ${BONUS_OBJS}
+	@echo "\n${GREEN}${BOLD}The libft Objects files have been ${RED}deleted ${GREEN}correcly.${END}"
+	@sleep 0.5
 
 fclean: clean
-	@${REMOVE} ${LIB_NAME}
-	@echo "\n${GREEN}${BOLD}Library are ${RED}deleted${GREEN} too\n${END}"
+	@${RM} ${LIB_NAME}
+	@echo "\n${GREEN}${BOLD}The libft.a Library have been ${RED}deleted ${GREEN}too.${END}"
+	@sleep 0.5
 
 re: fclean all
-	@echo "${GREEN}${BOLD}Library are remaked correcly${END}"
+	@echo "\n${GREEN}${BOLD}The libft.a have been remaked correcly.${END}"
+	@sleep 0.5
 
 .PHONY: clean fclean all re bonus
