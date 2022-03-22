@@ -39,7 +39,6 @@ static size_t	count_words(char *s, char delemiter, size_t i_s, size_t count)
 			count++;
 			while (s[i_s] != delemiter && s[i_s] != '\0')
 				i_s++;
-			count_words(s, delemiter, i_s, count);
 		}
 		else
 			i_s++;
