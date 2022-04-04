@@ -3,22 +3,27 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: tchalifo <tchalifo@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/12 16:28:38 by tchalifo          #+#    #+#             */
-/*   Updated: 2022/02/24 11:13:06 by marvin           ###   ########.fr       */
+/*   Updated: 2022/04/04 15:58:28 by tchalifo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_putstr(char *str)
+int	ft_putstr(char *str)
 {
 	size_t	i;
-	size_t	count;
+	int		count;
 
 	i = 0;
 	count = 0;
+	if (str == NULL)
+	{
+		write(1, "(null)", 6);
+		return (count + 6);
+	}
 	while (str[i])
 	{
 		write(1, &str[i], 1);
