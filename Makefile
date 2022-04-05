@@ -16,11 +16,19 @@ SRCS_FILES 		=	ft_atoi.c\
 			ft_memmove.c \
 			ft_memset.c \
 			ft_numlen.c \
+			ft_hexa_numlen.c \
+			ft_unsigned_numlen.c \
+			ft_hexa_long_numlen.c \
+			ft_putmem.c \
 			ft_putchar.c \
 			ft_putchar_fd.c \
 			ft_putendl_fd.c \
 			ft_putnbr.c \
 			ft_putnbr_fd.c \
+			ft_putnbr_hexa.c \
+			ft_putnbr_hexa_up.c \
+			ft_putnbr_long_hexa.c \
+			ft_putnbr_unsigned.c \
 			ft_putstr.c \
 			ft_putstr_fd.c \
 			ft_putstr_nl.c \
