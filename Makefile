@@ -19,6 +19,7 @@ SRCS_FILES 		=	ft_atoi.c\
 			ft_hexa_numlen.c \
 			ft_unsigned_numlen.c \
 			ft_hexa_long_numlen.c \
+			ft_printf.c \
 			ft_putmem.c \
 			ft_putchar.c \
 			ft_putchar_fd.c \
