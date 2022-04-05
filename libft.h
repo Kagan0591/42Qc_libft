@@ -24,6 +24,13 @@ typedef struct s_list
 	struct s_list	*next;
 }					t_list;
 
+typedef struct s_print
+{
+	va_list	valist;
+	int		count;
+	int		i;
+}t_print;
+
 int				ft_atoi(const char *str);
 void			ft_bzero(void *s, size_t n);
 void			*ft_calloc(size_t count, size_t size);
