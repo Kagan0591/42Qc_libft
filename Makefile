@@ -1,7 +1,8 @@
 # ->-Variables-->
-LIB_NAME 		= libft.a
+LIB_NAME		= libft.a
 
-SRCS_FILES 		=	ft_atoi.c\
+SRCS_FILES		= ft_gnl.c \
+			ft_atoi.c\
 			ft_bzero.c \
 			ft_calloc.c \
 			ft_isalnum.c \
@@ -34,6 +35,7 @@ SRCS_FILES 		=	ft_atoi.c\
 			ft_putstr_fd.c \
 			ft_putstr_nl.c \
 			ft_split.c \
+			ft_strchr_gnlvers.c \
 			ft_strchr.c \
 			ft_strcpy.c \
 			ft_strdup.c \
@@ -51,7 +53,7 @@ SRCS_FILES 		=	ft_atoi.c\
 			ft_tolower.c \
 			ft_toupper.c \
 
-B_SRCS_FILES	= 	ft_lstnew.c \
+B_SRCS_FILES	=	ft_lstnew.c \
 			ft_lstsize.c \
 			ft_lstadd_front.c \
 			ft_lstlast.c \
@@ -90,13 +92,13 @@ BLUE			= \033[34m
 VIOLET			= \033[35m
 BEIGE			= \033[36m
 WHITE			= \033[37m
-
+BUFFER_SIZE		=
 # ->-Rules-->
 all: ${LIB_NAME}
 
-${LIB_NAME}: ${OBJS}
+${LIB_NAME}: ${GNL_OBJS} ${OBJS}
 	@echo "\n${GREEN}${BOLD}Compiling and adding objects files to the libft.a archive.${END}"
-	@${ARCHIVE} ${LIB_NAME} ${OBJS}
+	@${ARCHIVE} ${LIB_NAME} ${OBJS} ${GNL_OBJS}
 	@sleep 0.5
 
 bonus: ${LIB_NAME} ${BONUS_OBJS}
@@ -105,7 +107,7 @@ bonus: ${LIB_NAME} ${BONUS_OBJS}
 	@sleep 0.5
 
 .c.o:
-	@$(CC) ${FLAGS} -o $@ -c $<
+	$(CC) ${FLAGS} -o $@ -c $<
 
 clean:
 	@$(RM) ${OBJS} ${BONUS_OBJS}

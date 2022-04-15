@@ -12,13 +12,16 @@
 
 #ifndef LIBFT_H
 # define LIBFT_H
+# define FD_SIZE 4096 //Used by GNL
+# define OPEN_MAX 1024 //Used by GNL
 
 # include <stddef.h>
 # include <unistd.h>
 # include <stdlib.h>
 # include <string.h>
 # include <stdarg.h>
-
+# include <fcntl.h>
+# include <limits.h>
 
 typedef struct s_list
 {
@@ -36,6 +39,7 @@ typedef struct s_print
 int				ft_atoi(const char *str);
 void			ft_bzero(void *s, size_t n);
 void			*ft_calloc(size_t count, size_t size);
+char			*ft_get_next_line(int fd);
 int				ft_isalnum(int c);
 int				ft_isalpha(int c);
 int				ft_isascii(int c);
@@ -67,6 +71,7 @@ void			ft_putstr_fd(char *s, int fd);
 void			ft_putstr_nl(char *str);
 char			**ft_split(char const *s, char c);
 char			*ft_strchr(const char *s, int c);
+char			*ft_strchr_gnlvers(const char *s, int c);
 char			*ft_strcpy(char *dst, const char *src);
 char			*ft_strdup(const char *s1);
 void			ft_striteri(char *s, void (*f)(unsigned int, char*));

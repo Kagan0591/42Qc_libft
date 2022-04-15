@@ -22,6 +22,5 @@ char	*ft_strdup(const char *s1)
 	if (!s2)
 		return (0);
 	ft_strlcpy(s2, s1, s1_length);
-	free((void *)s1);
 	return (s2);
 }
