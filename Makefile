@@ -44,6 +44,7 @@ SRCS_FILES		= ft_gnl.c \
 			ft_strlcat.c \
 			ft_strlcpy.c \
 			ft_strlen.c \
+			ft_strofstrlen.c \
 			ft_strmapi.c \
 			ft_strncmp.c \
 			ft_strnstr.c \
