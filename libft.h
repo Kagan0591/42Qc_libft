@@ -23,17 +23,19 @@
 # include <fcntl.h>
 # include <limits.h>
 
+/*Singly linked list*/
 typedef struct s_list
 {
-	void			*content;
+	/*data*/
 	struct s_list	*next;
-}					t_list;
+}t_list;
 
-typedef struct s_print
+/*ft_printf struct*/
+typedef struct		s_print
 {
-	va_list	valist;
-	int		count;
-	int		i;
+	va_list			valist;
+	int				count;
+	int				i;
 }t_print;
 
 int				ft_atoi(const char *str);
