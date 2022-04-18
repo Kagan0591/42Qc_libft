@@ -40,7 +40,7 @@ void	ft_dllst_secure_del(t_dlinklst *p_lst)
 	/*data to delete*/
 }
 
-s_bool	ft_dllst_isempty(t_dlinklst *p_lst)
+t_bool	ft_dllst_isempty(t_dlinklst *p_lst)
 {
 	if (p_lst == NULL)
 		return (true);
