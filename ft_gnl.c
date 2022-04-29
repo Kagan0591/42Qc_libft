@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_gnl.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tchalifo <tchalifo@student.42quebec.com    +#+  +:+       +#+        */
+/*   By: tchalifo <tchalifo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/15 08:42:48 by tchalifo          #+#    #+#             */
-/*   Updated: 2022/04/15 12:36:44 by tchalifo         ###   ########.fr       */
+/*   Updated: 2022/04/29 15:59:21 by tchalifo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 #define BUFFER_SIZE 2048
 
 static char	*crop_front(char *src)
@@ -123,4 +124,12 @@ char	*ft_get_next_line(int fd)
 	line = crop_front(remaining[fd]);
 	remaining[fd] = crop_end(remaining[fd]);
 	return (line);
+}
+
+int	main(void)
+{
+	int	fd;
+	fd = open("infile", O_RDONLY);
+	dprintf(2, "%s\n", ft_get_next_line(fd));
+	return (0);
 }
