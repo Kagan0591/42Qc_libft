@@ -6,7 +6,7 @@
 /*   By: tchalifo <tchalifo@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 13:05:41 by tchalifo          #+#    #+#             */
-/*   Updated: 2022/05/17 13:32:14 by tchalifo         ###   ########.fr       */
+/*   Updated: 2022/05/17 17:18:36 by tchalifo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ char	*ft_strjoin_free_s1(char const *s1, char const *s2)
 			return (NULL);
 		ft_strlcpy(s3, s1, (s1_lenght + 1));
 		ft_strlcat(s3, s2, ((s1_lenght + s2_lenght) + 1));
-		the_free((char*)s1);
+		the_free((char *)s1);
 		return (s3);
 	}
 	return (NULL);
