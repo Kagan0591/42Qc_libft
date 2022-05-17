@@ -1,16 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   gnl.c                                              :+:      :+:    :+:   */
+/*   ft_gnl.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tchalifo <tchalifo@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/15 08:42:48 by tchalifo          #+#    #+#             */
-/*   Updated: 2022/05/11 16:03:16 by tchalifo         ###   ########.fr       */
+/*   Updated: 2022/05/17 14:16:43 by tchalifo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 #define BUFFER_SIZE 2048
 
 static char	*crop_front(char *src)
@@ -96,24 +97,22 @@ static int	get_line(int fd, char **remaining_ptr)
 		free(buffer);
 		return (0);
 	}
-	read_output = read(fd, buffer, BUFFER_SIZE);
-	*remaining_ptr = ft_strjoin_sameptr(*remaining_ptr, buffer);
 	while (!ft_strchr(*remaining_ptr, '\n') && read_output != 0)
 	{
-		*remaining_ptr = ft_strjoin_sameptr(*remaining_ptr, buffer);
-		buffer[read_output] = '\0';
 		read_output = read(fd, buffer, BUFFER_SIZE);
+		buffer[read_output] = '\0';
 		if (read_output == -1)
 		{
 			free(buffer);
 			return (0);
 		}
+		*remaining_ptr = ft_strjoin_sameptr(*remaining_ptr, buffer);
 	}
 	free((void *)buffer);
 	return (1);
 }
 
-char	*get_next_line(int fd)
+char	*ft_get_next_line(int fd)
 {
 	char		*line;
 	static char	*remaining[FD_SIZE];
