@@ -38,7 +38,7 @@ typedef struct s_print
 int				ft_atoi(const char *str);
 void			ft_bzero(void *s, size_t n);
 void			*ft_calloc(size_t count, size_t size);
-char			*ft_get_next_line(int fd);
+char			*get_next_line(int fd);
 int				ft_isalnum(int c);
 int				ft_isalpha(int c);
 int				ft_isascii(int c);
