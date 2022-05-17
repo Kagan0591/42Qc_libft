@@ -6,16 +6,16 @@
 /*   By: tchalifo <tchalifo@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 13:05:41 by tchalifo          #+#    #+#             */
-/*   Updated: 2022/05/17 13:29:57 by tchalifo         ###   ########.fr       */
+/*   Updated: 2022/05/17 13:32:14 by tchalifo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
 
-static void	the_free(char **str_ptr1)
+static void	the_free(char *str_ptr1)
 {
-	free(&str_ptr1);
+	free(str_ptr1);
 }
 
 char	*ft_strjoin_free_s1(char const *s1, char const *s2)
@@ -37,18 +37,8 @@ char	*ft_strjoin_free_s1(char const *s1, char const *s2)
 			return (NULL);
 		ft_strlcpy(s3, s1, (s1_lenght + 1));
 		ft_strlcat(s3, s2, ((s1_lenght + s2_lenght) + 1));
-		the_free((char**)s1);
+		the_free((char*)s1);
 		return (s3);
 	}
 	return (NULL);
-}
-
-int	main(void)
-{
-	char	*test = {"Bonjour\n"};
-	char	*test2 = {"salut\n"};
-
-	ft_strjoin_free(test, test2);
-	printf("%s %s\n", test, test2);
-	return (0);
 }
