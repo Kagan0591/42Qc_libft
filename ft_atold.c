@@ -6,7 +6,7 @@
 /*   By: tchalifo <tchalifo@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 10:57:11 by tchalifo          #+#    #+#             */
-/*   Updated: 2022/10/17 15:08:49 by tchalifo         ###   ########.fr       */
+/*   Updated: 2022/10/17 16:10:29 by tchalifo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,8 @@
 long double	ft_atold(const char *str)
 {
 	long double	numbers;
-	long double	right_comma;
 	int			i;
 
-	numbers = 0;
-	right_comma = 0;
 	i = 0;
 	numbers = ft_atoi(str);
 	while (*str)
@@ -39,17 +36,17 @@ long double	ft_atold(const char *str)
 			str++;
 			while (*str >= '0' && *str <= '9')
 			{
-				right_comma = (right_comma * 10) + (*str - 48);
+				numbers = (numbers * 10) + (*str - 48);
 				str++;
 				i++;
 			}
 			while (i != 0)
 			{
-				right_comma = (right_comma / 10);
+				numbers = (numbers / 10);
 				i--;
 			}
 		}
 		str++;
 	}
-	return (numbers + right_comma);
+	return (numbers);
 }
