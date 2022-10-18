@@ -6,7 +6,7 @@
 /*   By: tchalifo <tchalifo@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 10:57:11 by tchalifo          #+#    #+#             */
-/*   Updated: 2022/10/17 16:10:29 by tchalifo         ###   ########.fr       */
+/*   Updated: 2022/10/18 14:20:32 by tchalifo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,20 +17,27 @@
  * présent dans la chaine suivant la virgule, la parsing s'arrête et seul les
  * chiffre précédent la dit caractère seront pris en consideration.
  *
+ * Merci pour ton code degeux Max ! sa marche en 25 lignes.
+ *
  * Exemple : la chaine "115a2.1e43" donnera le long double suivant : 115.1
  */
 
 #include "libft.h"
+#include <stdio.h>
 
 long double	ft_atold(const char *str)
 {
 	long double	numbers;
 	int			i;
+	int			neg;
 
 	i = 0;
+	neg = 1;
 	numbers = ft_atoi(str);
-	while (*str)
+	while (*str++)
 	{
+		if (*str - 1 == '-')
+			neg = -1;
 		if (*str == 44 || *str == 46)
 		{
 			str++;
@@ -40,13 +47,15 @@ long double	ft_atold(const char *str)
 				str++;
 				i++;
 			}
-			while (i != 0)
-			{
+			while (i-- != 0)
 				numbers = (numbers / 10);
-				i--;
-			}
 		}
-		str++;
 	}
-	return (numbers);
+	return (neg * numbers);
+}
+
+int	main(void)
+{
+	printf("%Lf\n", ft_atold("-0.3842"));
+	return (0);
 }
