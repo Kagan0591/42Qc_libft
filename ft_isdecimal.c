@@ -6,7 +6,7 @@
 /*   By: tchalifo <tchalifo@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 09:37:10 by tchalifo          #+#    #+#             */
-/*   Updated: 2022/10/18 10:06:53 by tchalifo         ###   ########.fr       */
+/*   Updated: 2022/10/18 12:44:25 by tchalifo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ int	ft_strisdecimal(char *str)
 
 	i = 0;
 	bool = 0;
+	if (str[i] == '-')
+		i++;
 	while (str[i])
 	{
 		if (str[i] >= '0' && str[i] <= '9')
