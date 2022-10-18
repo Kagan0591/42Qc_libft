@@ -4,6 +4,7 @@ LIB_NAME		= libft.a
 SRCS_FILES		= ft_argvcpy.c \
 			ft_gnl.c \
 			ft_atoi.c\
+			ft_atold.c \
 			ft_bzero.c \
 			ft_calloc.c \
 			ft_isalnum.c \
