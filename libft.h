@@ -35,6 +35,7 @@ typedef struct s_print
 	int				i;
 }t_print;
 
+char			**ft_argvcpy(int argc, char **argv);
 int				ft_atoi(const char *str);
 long double		ft_atold(const char *str);
 void			ft_bzero(void *s, size_t n);
