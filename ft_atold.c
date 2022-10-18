@@ -6,7 +6,7 @@
 /*   By: tchalifo <tchalifo@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 10:57:11 by tchalifo          #+#    #+#             */
-/*   Updated: 2022/10/18 14:20:32 by tchalifo         ###   ########.fr       */
+/*   Updated: 2022/10/18 14:23:18 by tchalifo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,10 +52,4 @@ long double	ft_atold(const char *str)
 		}
 	}
 	return (neg * numbers);
-}
-
-int	main(void)
-{
-	printf("%Lf\n", ft_atold("-0.3842"));
-	return (0);
 }
