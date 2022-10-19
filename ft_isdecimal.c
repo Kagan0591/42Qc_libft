@@ -6,7 +6,7 @@
 /*   By: tchalifo <tchalifo@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 09:37:10 by tchalifo          #+#    #+#             */
-/*   Updated: 2022/10/18 12:44:25 by tchalifo         ###   ########.fr       */
+/*   Updated: 2022/10/19 09:02:35 by tchalifo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	ft_strisdecimal(char *str)
 {
 	int	i;
-	int bool;
+	int	bool;
 
 	i = 0;
 	bool = 0;
@@ -30,7 +30,7 @@ int	ft_strisdecimal(char *str)
 		else
 		{
 			bool = 1;
-			break;
+			break ;
 		}
 	}
 	return (bool);
