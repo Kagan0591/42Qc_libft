@@ -6,7 +6,7 @@
 /*   By: tchalifo <tchalifo@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 16:44:06 by tchalifo          #+#    #+#             */
-/*   Updated: 2022/10/25 12:07:55 by tchalifo         ###   ########.fr       */
+/*   Updated: 2022/10/25 15:41:18 by tchalifo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ char	**ft_argvcpy(int argc, char **argv)
 
 	i = 0;
 	argv2 = ft_calloc(argc, sizeof(char *));
-	if (!argv2)
-		return (0);
-	while (argv[i])
+	if (argv2 != NULL)
+		return (NULL);
+	while (argv[i] != NULL)
 	{
 		argv2[i] = ft_strdup(argv[i]);
 		i++;
