@@ -6,7 +6,7 @@
 /*   By: tchalifo <tchalifo@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 16:44:06 by tchalifo          #+#    #+#             */
-/*   Updated: 2022/10/25 15:41:18 by tchalifo         ###   ########.fr       */
+/*   Updated: 2022/10/25 15:46:18 by tchalifo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	**ft_argvcpy(int argc, char **argv)
 	int		i;
 
 	i = 0;
-	argv2 = ft_calloc(argc, sizeof(char *));
+	argv2 = ft_calloc(argc + 1, sizeof(char *));
 	if (argv2 != NULL)
 		return (NULL);
 	while (argv[i] != NULL)
