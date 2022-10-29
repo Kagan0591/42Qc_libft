@@ -6,7 +6,7 @@
 /*   By: tchalifo <tchalifo@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 20:26:49 by tchalifo          #+#    #+#             */
-/*   Updated: 2022/10/25 22:44:21 by tchalifo         ###   ########.fr       */
+/*   Updated: 2022/10/26 19:59:14 by tchalifo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@
  * C'est à l'utilisateur de libérer la mémoire.
  * Elle est alloué sur les variables suivantes :
  *  - Valeur de retour (char **) ;
- *  - Chaques tableaux du tableau en valeur de retour (char **) ::
+ *  - Chaques tableaux du tableau en valeur de retour (char **) :
  *
  * Retour **
  * La fonction retourne la copy du tableau 2D passé en paramètre (l'argv) et
