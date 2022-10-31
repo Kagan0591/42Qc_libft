@@ -6,7 +6,7 @@
 /*   By: tchalifo <tchalifo@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 16:44:06 by tchalifo          #+#    #+#             */
-/*   Updated: 2022/10/25 16:48:20 by tchalifo         ###   ########.fr       */
+/*   Updated: 2022/10/25 16:51:47 by tchalifo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,4 +30,14 @@ char	**ft_argvcpy(int argc, char **argv)
 	}
 	argv[i] = NULL;
 	return (argv2);
+}
+
+int	main(int argc, char **argv)
+{
+	char **test;
+
+	printf("bob\n");
+	test = ft_argvcpy(argc, argv);
+	printf("%s\n", test[2]);
+	return(0);
 }
