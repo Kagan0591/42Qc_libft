@@ -6,7 +6,7 @@
 /*   By: tchalifo <tchalifo@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 22:06:56 by tchalifo          #+#    #+#             */
-/*   Updated: 2022/10/31 14:19:33 by tchalifo         ###   ########.fr       */
+/*   Updated: 2022/10/31 14:20:27 by tchalifo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
  *- - long double ft_calloc(const char *str)
  *
  * Protection **
- *-L'allocation de mémoire est protégé par une condition.
+ *-L'allocation de mémoire est protégé par uneqondition.
  *
  * Gestion de l'alloc dynamique de la mémoire **
  *-La fonction alloue de la mémoire a l'aide de malloc.
