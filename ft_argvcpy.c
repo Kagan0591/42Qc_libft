@@ -6,12 +6,12 @@
 /*   By: tchalifo <tchalifo@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 16:44:06 by tchalifo          #+#    #+#             */
-/*   Updated: 2022/10/31 14:55:41 by tchalifo         ###   ########.fr       */
+/*   Updated: 2022/11/01 13:57:49 by tchalifo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
+
 char	**ft_argvcpy(int argc, char **argv)
 {
 	char	**argv_cpy;

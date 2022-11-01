@@ -6,16 +6,15 @@
 /*   By: tchalifo <tchalifo@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 10:57:11 by tchalifo          #+#    #+#             */
-/*   Updated: 2022/10/26 19:50:24 by tchalifo         ###   ########.fr       */
+/*   Updated: 2022/11/01 13:58:26 by tchalifo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
- /*
+/*
  * Merci pour ton code degeux Max ! XD ça marche en 25 lignes.
  */
 
 #include "libft.h"
-#include <stdio.h>
 
 long double	ft_atold(const char *str)
 {
